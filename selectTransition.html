@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>select-transition</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding-left: 100px;
+    }
+    input {
+      width: 400px;
+      height: 40px;
+    }
+    .select {
+      width: 400px;
+      border-right: 1px solid;
+      border-left: 1px solid;
+      border-bottom: 1px solid;
+      margin-top: -1px;
+      height: auto;
+      overflow: hidden;
+      transition: 1s;
+      z-index: -1;
+      transform-origin: center top;
+      transform: scaleY(0);
+    }
+    .select > div {
+      line-height: 30px;
+      padding-left: 20px;
+    }
+    input:focus ~ .select {
+      transform: scaleY(1);
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <div class="select">
+    <div>Lorem, ipsum.</div>
+    <div>Ab, vel?</div>
+    <div>Voluptatum, iusto.</div>
+    <div>Atque, repudiandae?</div>
+    <div>Corporis, voluptas.</div>
+  </div>
+  <script>
+    function randomColor() {
+      return '#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0')
+    }
+    // padEnd() 方法会将当前字符串从末尾开始填充给定的字符串（如果需要会重复填充），直到达到给定的长度。填充是从当前字符串的末尾开始的。
+    console.log(randomColor())
+  </script>
+</body>
+</html>

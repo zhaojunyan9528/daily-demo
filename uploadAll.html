@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上传文件-支持文件夹-拖拽等</title>
+  <style>
+    .drop {
+      width: 800px;
+      height: 300px;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+  <div class="drop">拖拽</div>
+  <!-- multiple 支持多选文件 -->
+  <!-- webkitdirectory mozdirectory odirectory 文件支持目录选择-->
+
+  <input type="file" id="fileFile" multiple />
+  <br>
+  <input type="file" id="filepicker" multiple webkitdirectory mozdirectory odirectory />
+  <ul id="listing"></ul>
+  <script>
+    document.getElementById("fileFile").addEventListener(
+      "change",
+      (event) => {
+        let output = document.getElementById("listing");
+        for (const file of event.target.files) {
+          console.log(file)
+          let item = document.createElement("li");
+          item.textContent = file.name + '----' + file.size;
+          output.appendChild(item);
+        }
+      },
+      false,
+    );
+    document.getElementById("filepicker").addEventListener(
+      "change",
+      (event) => {
+        let output = document.getElementById("listing");
+        for (const file of event.target.files) {
+          console.log(file)
+          let item = document.createElement("li");
+          item.textContent = file.webkitRelativePath;
+          output.appendChild(item);
+        }
+      },
+      false,
+    );
+    const drop = document.querySelector('.drop')
+    drop.ondragenter = (e) => {
+      e.preventDefault()
+    }
+    drop.ondragover = (e) => {
+      e.preventDefault()
+    }
+    drop.ondrop = (e) => {
+      e.preventDefault()
+      for (const item of e.dataTransfer.items) {
+        const entry = item.webkitGetAsEntry()
+        console.log(entry)
+        // filesystem: DOMFileSystem: {name: 'http_127.0.0.1_5500:Isolated_AF5320443A64781FE8803A9C403E7049', root: DirectoryEntry}
+        // fullPath: "/1.js"
+        // isDirectory:false
+        // isFile:true
+        // name: "1.js"
+        if (entry.isDirectory) { // 目录
+          const reader = entry.createReader()
+          reader.readEntries((entries) => {
+            console.log(entries)
+          })
+        } else { // 文件
+          entry.file((f) => {
+            console.log(f)
+          })
+        }
+      }
+    }
+
+  </script>
+</body>
+</html>

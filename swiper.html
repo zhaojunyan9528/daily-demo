@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      border: 1px solid blue;
+      position: relative;
+    }
+    .carousel {
+      display: flex;
+      height: 100%;
+      /* transition: 0.5s; */
+    }
+    .carousel_item {
+      background-color: aquamarine;
+      color: white;
+      height: 100%;
+      width: 300px;
+      min-width: 300px;
+      text-align: center;
+      font-size: 30px;
+      padding-top: 60px;
+    }
+    .indicate {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin: 0 10px 0 0;
+      border-radius: 50%;
+      border: 2px solid blueviolet;
+      background-color: white;
+    }
+    .dot.active {
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="carousel">
+      <div class="carousel_item" >1</div>
+      <div class="carousel_item">2</div>
+      <div class="carousel_item">3</div>
+    </div>
+    <div class="indicate">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    // 无限循环原理：
+    // 弹性盒水平排列，设置translateX移动加transition过渡动画
+    // 克隆第一个轮播图元素到轮播容器末尾，当轮播到最后一个轮播图时，使其下次轮播克隆的元素即轮播容器最后添加的克隆元素，
+    // 同时指示器active第一个点，过渡动画结束后，立即translateX移动到第一个轮播位置（取消过渡动画），实现无痕无限循环轮播
+    let doms = {
+      carousel: document.querySelector('.carousel'),
+      carouselItems: document.querySelectorAll('.carousel_item'),
+      indicators: document.querySelectorAll('.dot')
+    }
+    
+    function moveTo(index) {
+      console.log('moveTo: ' + index)
+      doms.carousel.style.transition = '0.5s'
+      doms.carousel.style.transform = `translateX(-${index}00%)`
+      // 去除当前选中指示器
+      let active = document.querySelector('.dot.active')
+      active.classList.remove('active')
+      // 重新设置指示器
+      doms.indicators[index].classList.add('active')
+    }
+    // 给指示器添加点击事件
+    doms.indicators.forEach((item, index) => {
+      item.onclick = function () {
+        moveTo(index)
+      }
+    })
+    // 在轮播收尾各添加一个克隆项
+    const firstClone = doms.carouselItems[0].cloneNode(true)
+    doms.carousel.appendChild(firstClone)
+    let initialValue = 0
+    let currentItems = document.querySelectorAll('.carousel_item')
+    let interval = setInterval(() => {
+      initialValue++
+      // 当轮播到最后一张时，轮播指向克隆的第一张，指示器指向第一个，过渡动画结束后移到第一张轮播图
+      if (initialValue >= currentItems.length - 1) {
+        doms.carousel.style.transition = '0.5s'
+        doms.carousel.style.transform = `translateX(-${initialValue}00%)`
+        // 去除当前选中指示器
+        let active = document.querySelector('.dot.active')
+        if (active) active.classList.remove('active')
+        // 重新设置指示器为第一个
+        doms.indicators[0].classList.add('active')
+        setTimeout(() => {
+          initialValue = 0
+          doms.carousel.style.transition = 'none'
+          doms.carousel.style.transform = `translateX(-${initialValue}00%)`
+        }, 500)
+      } else {
+        moveTo(initialValue)
+      }
+    }, 3000)
+  </script>
+</body>
+</html>

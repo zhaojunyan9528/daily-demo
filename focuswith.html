@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>focus-within</title>
+  <style>
+    input:focus {
+      border: 1px solid blue;
+    }
+    .form-block {
+      width: 300px;
+      height: 150px;
+    }
+    .form-block:focus-within {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <form action="" class="form-block">
+    <label for="input">姓名：</label>
+    <input type="text" name="input" id="">
+  </form>
+</body>
+</html>

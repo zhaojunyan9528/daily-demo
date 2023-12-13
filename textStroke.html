@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text-stroke</title>
+  <style>
+    body {
+      background: linear-gradient(to right, yellow,purple);
+    }
+    p {
+      /* text-shadow: 
+      0 2px #fff,
+      0 -2px #fff,
+      -2px 2px #fff,
+      2px 2px #fff,
+      -2px 0px #fff,
+      2px 0 #fff; */
+
+      font-weight: bold;
+      font-size: 80px;
+      -webkit-text-stroke: 2px #fff;
+      color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <p>text-stroke</p>
+  <script>
+    class A {
+      constructor() {
+        this._abc = 1 // 以前没有私有字段用_来说明是私有字段但是外部可以访问
+      }
+    }
+    let a = new A()
+    console.log(a._abc) // 1
+
+    class B {
+      #abc; // 定义一个私有字段
+      constructor() {
+        this.#abc = 1
+      }
+      #method (){} // 私有方法
+    }
+    let b = new B()
+    console.log(b, b.#abc) // private field '#abc' must be declared in an enclosing class
+  </script>
+</body>
+</html>

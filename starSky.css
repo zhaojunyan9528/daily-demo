@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.title {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.layer1 {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 13vw 66vh #fff,5vw 83vh #fff,86vw 39vh #fff,68vw 60vh #fff,75vw 99vh #fff,6vw 7vh #fff,82vw 91vh #fff,35vw 89vh #fff,59vw 25vh #fff,49vw 52vh #fff,46vw 85vh #fff,53vw 8vh #fff,1vw 18vh #fff,99vw 41vh #fff,35vw 19vh #fff,22vw 79vh #fff,25vw 5vh #fff,53vw 98vh #fff,14vw 71vh #fff,81vw 26vh #fff,46vw 66vh #fff,79vw 10vh #fff,62vw 11vh #fff,12vw 10vh #fff,17vw 60vh #fff,51vw 69vh #fff,51vw 22vh #fff,27vw 62vh #fff,31vw 19vh #fff,73vw 23vh #fff,73vw 19vh #fff,62vw 49vh #fff,68vw 23vh #fff,87vw 23vh #fff,56vw 100vh #fff,13vw 48vh #fff,33vw 3vh #fff,95vw 15vh #fff,7vw 70vh #fff,31vw 17vh #fff,62vw 67vh #fff,74vw 76vh #fff,48vw 8vh #fff,73vw 100vh #fff,84vw 29vh #fff,50vw 92vh #fff,45vw 10vh #fff,11vw 12vh #fff,44vw 79vh #fff,47vw 82vh #fff,25vw 99vh #fff,51vw 27vh #fff,94vw 24vh #fff,93vw 48vh #fff,72vw 75vh #fff,37vw 21vh #fff,40vw 81vh #fff,71vw 34vh #fff,54vw 92vh #fff,75vw 26vh #fff,3vw 67vh #fff,16vw 41vh #fff,31vw 100vh #fff,56vw 23vh #fff,45vw 40vh #fff,27vw 55vh #fff,83vw 74vh #fff,26vw 82vh #fff,45vw 7vh #fff,56vw 84vh #fff,79vw 87vh #fff,11vw 85vh #fff,83vw 6vh #fff,71vw 11vh #fff,76vw 79vh #fff,82vw 86vh #fff,88vw 86vh #fff,79vw 44vh #fff,72vw 22vh #fff,27vw 25vh #fff,90vw 51vh #fff,52vw 72vh #fff,64vw 50vh #fff,39vw 52vh #fff,91vw 52vh #fff,5vw 46vh #fff,82vw 35vh #fff,82vw 23vh #fff,78vw 68vh #fff,43vw 67vh #fff,43vw 6vh #fff,100vw 85vh #fff,26vw 28vh #fff,35vw 19vh #fff,12vw 73vh #fff,89vw 40vh #fff,88vw 33vh #fff,35vw 51vh #fff,35vw 70vh #fff,3vw 28vh #fff,17vw 56vh #fff,61vw 36vh #fff,92vw 47vh #fff,43vw 68vh #fff,100vw 32vh #fff,59vw 97vh #fff,34vw 61vh #fff,49vw 38vh #fff,81vw 1vh #fff,2vw 19vh #fff,60vw 99vh #fff,86vw 67vh #fff,21vw 17vh #fff,9vw 68vh #fff,30vw 13vh #fff,16vw 80vh #fff,65vw 13vh #fff,27vw 21vh #fff,94vw 82vh #fff,4vw 90vh #fff,26vw 67vh #fff,91vw 47vh #fff,9vw 3vh #fff,78vw 76vh #fff,30vw 79vh #fff,38vw 83vh #fff,73vw 45vh #fff,47vw 8vh #fff,23vw 58vh #fff,16vw 51vh #fff,26vw 26vh #fff,68vw 32vh #fff,99vw 91vh #fff,74vw 18vh #fff,7vw 90vh #fff,82vw 88vh #fff,22vw 79vh #fff,15vw 87vh #fff,4vw 88vh #fff,21vw 71vh #fff,84vw 56vh #fff,28vw 80vh #fff,87vw 73vh #fff,17vw 47vh #fff,2vw 99vh #fff,37vw 65vh #fff,34vw 94vh #fff,43vw 27vh #fff,8vw 26vh #fff,79vw 6vh #fff,67vw 8vh #fff,7vw 24vh #fff,12vw 61vh #fff,2vw 48vh #fff,86vw 23vh #fff,100vw 69vh #fff,91vw 8vh #fff,22vw 48vh #fff,90vw 21vh #fff,66vw 7vh #fff,89vw 15vh #fff,12vw 36vh #fff,57vw 100vh #fff,20vw 1vh #fff,89vw 5vh #fff,44vw 52vh #fff,5vw 37vh #fff,38vw 34vh #fff,64vw 35vh #fff,52vw 59vh #fff,39vw 44vh #fff,5vw 55vh #fff,89vw 88vh #fff,56vw 88vh #fff,22vw 91vh #fff,44vw 85vh #fff,22vw 42vh #fff,4vw 74vh #fff,41vw 22vh #fff,1vw 1vh #fff,10vw 72vh #fff,32vw 49vh #fff,60vw 33vh #fff,74vw 43vh #fff,27vw 59vh #fff,99vw 25vh #fff,81vw 72vh #fff,52vw 46vh #fff,42vw 95vh #fff,80vw 93vh #fff,82vw 5vh #fff,75vw 47vh #fff,71vw 82vh #fff,8vw 52vh #fff,97vw 95vh #fff,6vw 47vh #fff,84vw 85vh #fff,52vw 92vh #fff,27vw 5vh #fff,29vw 24vh #fff,6vw 20vh #fff,1vw 52vh #fff,78vw 48vh #fff,66vw 9vh #fff,70vw 81vh #fff,33vw 47vh #fff,96vw 61vh #fff,22vw 70vh #fff,11vw 61vh #fff,55vw 11vh #fff,1vw 96vh #fff,85vw 94vh #fff,51vw 59vh #fff,59vw 27vh #fff,35vw 38vh #fff,79vw 51vh #fff,84vw 5vh #fff,4vw 10vh #fff,10vw 57vh #fff,34vw 64vh #fff,89vw 12vh #fff,3vw 20vh #fff,70vw 52vh #fff,21vw 11vh #fff,44vw 74vh #fff,92vw 80vh #fff,64vw 18vh #fff,93vw 98vh #fff,3vw 22vh #fff,25vw 97vh #fff,36vw 72vh #fff,46vw 49vh #fff,21vw 31vh #fff,3vw 86vh #fff,26vw 93vh #fff,100vw 62vh #fff,64vw 1vh #fff,36vw 86vh #fff,34vw 10vh #fff,90vw 82vh #fff,90vw 16vh #fff,25vw 81vh #fff,8vw 34vh #fff,79vw 43vh #fff,73vw 14vh #fff,65vw 19vh #fff,16vw 8vh #fff,39vw 7vh #fff,3vw 17vh #fff,85vw 71vh #fff,25vw 8vh #fff,54vw 3vh #fff,4vw 17vh #fff,14vw 28vh #fff,79vw 50vh #fff,21vw 53vh #fff,7vw 27vh #fff,29vw 83vh #fff,67vw 40vh #fff,80vw 25vh #fff,36vw 2vh #fff,92vw 88vh #fff,9vw 36vh #fff,27vw 58vh #fff,59vw 84vh #fff,52vw 23vh #fff,62vw 1vh #fff,44vw 17vh #fff,75vw 18vh #fff,6vw 99vh #fff,34vw 90vh #fff,62vw 100vh #fff,19vw 23vh #fff,6vw 99vh #fff,41vw 68vh #fff,93vw 12vh #fff,44vw 80vh #fff,14vw 50vh #fff,37vw 33vh #fff,72vw 78vh #fff,69vw 60vh #fff,94vw 33vh #fff,22vw 21vh #fff,59vw 92vh #fff,84vw 85vh #fff,29vw 49vh #fff,91vw 86vh #fff,61vw 19vh #fff,54vw 87vh #fff,77vw 68vh #fff,57vw 87vh #fff,91vw 5vh #fff,46vw 54vh #fff,88vw 11vh #fff,1vw 77vh #fff,99vw 78vh #fff,44vw 62vh #fff,58vw 54vh #fff,77vw 15vh #fff,67vw 80vh #fff,25vw 21vh #fff,47vw 27vh #fff,10vw 41vh #fff,81vw 55vh #fff,27vw 30vh #fff,31vw 23vh #fff,86vw 86vh #fff,6vw 51vh #fff,94vw 38vh #fff,31vw 99vh #fff,81vw 45vh #fff,5vw 19vh #fff,95vw 87vh #fff,93vw 37vh #fff,11vw 25vh #fff,6vw 38vh #fff,71vw 13vh #fff,14vw 33vh #fff,96vw 87vh #fff,38vw 61vh #fff,86vw 7vh #fff,73vw 23vh #fff,97vw 58vh #fff,65vw 22vh #fff,86vw 32vh #fff,91vw 80vh #fff,19vw 97vh #fff,60vw 81vh #fff,31vw 48vh #fff,94vw 75vh #fff,66vw 76vh #fff,84vw 3vh #fff,56vw 73vh #fff,93vw 19vh #fff,40vw 21vh #fff,85vw 98vh #fff,68vw 6vh #fff,18vw 59vh #fff,31vw 53vh #fff,47vw 15vh #fff,57vw 12vh #fff,15vw 31vh #fff,80vw 44vh #fff,67vw 19vh #fff,63vw 44vh #fff,93vw 3vh #fff,16vw 54vh #fff,19vw 87vh #fff,42vw 1vh #fff,82vw 29vh #fff,21vw 32vh #fff,9vw 75vh #fff,92vw 31vh #fff,73vw 39vh #fff,28vw 2vh #fff,39vw 89vh #fff,18vw 63vh #fff,46vw 68vh #fff,35vw 66vh #fff,88vw 16vh #fff,13vw 17vh #fff,62vw 45vh #fff,76vw 24vh #fff,46vw 56vh #fff,23vw 69vh #fff,51vw 26vh #fff,73vw 76vh #fff,70vw 44vh #fff,68vw 41vh #fff,42vw 83vh #fff,26vw 34vh #fff,2vw 94vh #fff,63vw 48vh #fff,93vw 3vh #fff,47vw 75vh #fff,54vw 85vh #fff,56vw 51vh #fff,21vw 90vh #fff,30vw 72vh #fff,79vw 27vh #fff,13vw 63vh #fff,70vw 97vh #fff,30vw 46vh #fff,58vw 80vh #fff,10vw 22vh #fff,54vw 43vh #fff,74vw 91vh #fff,70vw 25vh #fff,73vw 82vh #fff,7vw 69vh #fff,96vw 44vh #fff,94vw 54vh #fff,33vw 50vh #fff,90vw 34vh #fff,11vw 12vh #fff,89vw 18vh #fff,88vw 67vh #fff,74vw 34vh #fff,99vw 42vh #fff,25vw 48vh #fff,52vw 11vh #fff,65vw 82vh #fff,56vw 55vh #fff,34vw 74vh #fff,32vw 90vh #fff,4vw 11vh #fff,73vw 56vh #fff,2vw 67vh #fff,93vw 57vh #fff,75vw 46vh #fff,16vw 1vh #fff,13vw 81vh #fff,38vw 27vh #fff,36vw 54vh #fff,95vw 39vh #fff,31vw 80vh #fff,85vw 14vh #fff,61vw 29vh #fff,100vw 73vh #fff,12vw 32vh #fff,56vw 68vh #fff,58vw 19vh #fff,4vw 78vh #fff,90vw 5vh #fff,80vw 9vh #fff,64vw 95vh #fff,24vw 8vh #fff,3vw 33vh #fff,58vw 20vh #fff,11vw 52vh #fff,8vw 80vh #fff,95vw 57vh #fff,18vw 20vh #fff,59vw 96vh #fff,55vw 92vh #fff,3vw 26vh #fff,10vw 86vh #fff,45vw 49vh #fff,96vw 60vh #fff,79vw 10vh #fff,74vw 5vh #fff,68vw 30vh #fff,29vw 6vh #fff,58vw 60vh #fff,58vw 30vh #fff,76vw 3vh #fff,50vw 99vh #fff,60vw 52vh #fff,78vw 53vh #fff,67vw 12vh #fff,73vw 74vh #fff,49vw 84vh #fff,45vw 78vh #fff,29vw 5vh #fff,67vw 16vh #fff,72vw 3vh #fff,96vw 74vh #fff,7vw 23vh #fff,45vw 75vh #fff,9vw 86vh #fff,1vw 29vh #fff,19vw 84vh #fff,66vw 20vh #fff,30vw 28vh #fff,81vw 26vh #fff,5vw 4vh #fff,60vw 12vh #fff,26vw 85vh #fff,42vw 46vh #fff,37vw 99vh #fff,99vw 41vh #fff,24vw 3vh #fff,45vw 19vh #fff,13vw 65vh #fff,97vw 97vh #fff,33vw 77vh #fff,65vw 55vh #fff,24vw 30vh #fff,72vw 80vh #fff,4vw 15vh #fff,7vw 74vh #fff,6vw 8vh #fff,60vw 63vh #fff,47vw 48vh #fff,87vw 22vh #fff,29vw 20vh #fff,87vw 40vh #fff,92vw 80vh #fff,2vw 73vh #fff,87vw 65vh #fff,6vw 96vh #fff,10vw 51vh #fff,99vw 99vh #fff,26vw 29vh #fff,47vw 89vh #fff,58vw 43vh #fff,96vw 98vh #fff,21vw 26vh #fff,27vw 18vh #fff,31vw 74vh #fff;
+  animation: moveUp 500s linear infinite;
+}
+.layer1::after {
+  content: "";
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  left: 0;
+  top: 100vh;
+  border-radius: inherit;
+  box-shadow: inherit;
+}
+
+.layer2 {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 76vw 6vh #fff,3vw 47vh #fff,38vw 86vh #fff,80vw 92vh #fff,19vw 72vh #fff,16vw 19vh #fff,38vw 79vh #fff,98vw 6vh #fff,8vw 19vh #fff,38vw 45vh #fff,45vw 71vh #fff,79vw 6vh #fff,44vw 43vh #fff,60vw 41vh #fff,15vw 11vh #fff,74vw 95vh #fff,79vw 83vh #fff,54vw 15vh #fff,88vw 7vh #fff,88vw 25vh #fff,93vw 61vh #fff,53vw 84vh #fff,77vw 93vh #fff,66vw 21vh #fff,55vw 42vh #fff,24vw 12vh #fff,16vw 68vh #fff,95vw 91vh #fff,62vw 60vh #fff,57vw 59vh #fff,87vw 47vh #fff,97vw 72vh #fff,38vw 69vh #fff,91vw 34vh #fff,31vw 82vh #fff,88vw 27vh #fff,86vw 49vh #fff,92vw 44vh #fff,49vw 46vh #fff,99vw 47vh #fff,59vw 57vh #fff,1vw 18vh #fff,98vw 12vh #fff,77vw 23vh #fff,81vw 25vh #fff,16vw 64vh #fff,64vw 82vh #fff,18vw 22vh #fff,11vw 68vh #fff,50vw 22vh #fff,12vw 87vh #fff,68vw 86vh #fff,92vw 62vh #fff,32vw 92vh #fff,47vw 2vh #fff,91vw 6vh #fff,5vw 94vh #fff,74vw 77vh #fff,52vw 12vh #fff,76vw 73vh #fff,67vw 14vh #fff,91vw 69vh #fff,95vw 60vh #fff,17vw 99vh #fff,43vw 16vh #fff,14vw 13vh #fff,17vw 31vh #fff,60vw 56vh #fff,45vw 87vh #fff,19vw 75vh #fff,76vw 91vh #fff,68vw 68vh #fff,96vw 89vh #fff,55vw 71vh #fff,78vw 94vh #fff,2vw 51vh #fff,4vw 73vh #fff,6vw 86vh #fff,60vw 37vh #fff,68vw 21vh #fff,50vw 64vh #fff,71vw 58vh #fff,21vw 55vh #fff,4vw 47vh #fff,51vw 99vh #fff,33vw 73vh #fff,49vw 98vh #fff,41vw 99vh #fff,97vw 25vh #fff,98vw 5vh #fff,33vw 47vh #fff,14vw 69vh #fff,83vw 46vh #fff,94vw 97vh #fff,15vw 22vh #fff,23vw 14vh #fff,27vw 32vh #fff,38vw 16vh #fff,9vw 21vh #fff,36vw 31vh #fff,75vw 3vh #fff,24vw 34vh #fff,8vw 13vh #fff,91vw 58vh #fff,7vw 48vh #fff,64vw 65vh #fff,80vw 80vh #fff,35vw 46vh #fff,44vw 55vh #fff,42vw 59vh #fff,6vw 37vh #fff,69vw 22vh #fff,9vw 26vh #fff,64vw 97vh #fff,17vw 38vh #fff,24vw 6vh #fff,32vw 69vh #fff,74vw 95vh #fff,94vw 81vh #fff,34vw 37vh #fff,45vw 58vh #fff,5vw 3vh #fff,17vw 1vh #fff,91vw 79vh #fff,18vw 97vh #fff,5vw 34vh #fff,52vw 23vh #fff,79vw 8vh #fff,19vw 84vh #fff,9vw 39vh #fff,13vw 6vh #fff,29vw 89vh #fff,44vw 1vh #fff,35vw 29vh #fff,22vw 98vh #fff,57vw 24vh #fff,93vw 53vh #fff,20vw 27vh #fff,97vw 84vh #fff,81vw 83vh #fff,25vw 60vh #fff,9vw 65vh #fff,4vw 14vh #fff,68vw 64vh #fff,16vw 6vh #fff,86vw 69vh #fff,36vw 71vh #fff,80vw 64vh #fff,22vw 41vh #fff,86vw 99vh #fff,58vw 80vh #fff,45vw 62vh #fff,75vw 24vh #fff,81vw 76vh #fff,10vw 32vh #fff,17vw 75vh #fff,100vw 91vh #fff,75vw 94vh #fff,41vw 26vh #fff,85vw 82vh #fff,8vw 76vh #fff,15vw 14vh #fff,19vw 28vh #fff,57vw 46vh #fff,42vw 42vh #fff,61vw 24vh #fff,16vw 58vh #fff,24vw 18vh #fff,12vw 21vh #fff,98vw 74vh #fff,38vw 28vh #fff,68vw 90vh #fff,9vw 95vh #fff,33vw 70vh #fff,17vw 4vh #fff,92vw 93vh #fff,70vw 95vh #fff,44vw 55vh #fff,69vw 52vh #fff,98vw 19vh #fff,18vw 30vh #fff,91vw 73vh #fff,35vw 93vh #fff,11vw 16vh #fff,8vw 27vh #fff,50vw 62vh #fff,59vw 25vh #fff,40vw 34vh #fff,24vw 6vh #fff,16vw 55vh #fff,86vw 17vh #fff,80vw 10vh #fff,61vw 87vh #fff,18vw 12vh #fff,10vw 41vh #fff,57vw 8vh #fff,79vw 59vh #fff,14vw 39vh #fff,97vw 82vh #fff,30vw 31vh #fff,82vw 52vh #fff,65vw 61vh #fff,45vw 26vh #fff,96vw 30vh #fff,97vw 31vh #fff,23vw 28vh #fff,69vw 75vh #fff,97vw 72vh #fff,78vw 25vh #fff,11vw 73vh #fff,93vw 64vh #fff,26vw 61vh #fff,4vw 48vh #fff,3vw 43vh #fff,74vw 51vh #fff,41vw 3vh #fff,7vw 68vh #fff,14vw 29vh #fff,26vw 34vh #fff,21vw 80vh #fff,76vw 32vh #fff,63vw 39vh #fff,38vw 92vh #fff,95vw 82vh #fff,85vw 83vh #fff,45vw 92vh #fff,69vw 62vh #fff,48vw 89vh #fff,84vw 23vh #fff,36vw 33vh #fff,74vw 58vh #fff,13vw 66vh #fff,23vw 87vh #fff,5vw 16vh #fff,33vw 99vh #fff,64vw 4vh #fff,65vw 46vh #fff,52vw 6vh #fff,39vw 21vh #fff,30vw 44vh #fff,27vw 17vh #fff,89vw 93vh #fff,36vw 77vh #fff,58vw 87vh #fff,6vw 35vh #fff,35vw 35vh #fff,52vw 55vh #fff,18vw 38vh #fff,52vw 62vh #fff,30vw 84vh #fff;
+  animation: moveUp 250s linear infinite;
+}
+.layer2::after {
+  content: "";
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  left: 0;
+  top: 100vh;
+  border-radius: inherit;
+  box-shadow: inherit;
+}
+
+.layer3 {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 82vw 58vh #fff,38vw 35vh #fff,51vw 66vh #fff,47vw 36vh #fff,5vw 55vh #fff,73vw 19vh #fff,98vw 14vh #fff,79vw 39vh #fff,84vw 83vh #fff,62vw 67vh #fff,6vw 79vh #fff,77vw 61vh #fff,33vw 4vh #fff,45vw 13vh #fff,16vw 74vh #fff,38vw 70vh #fff,71vw 90vh #fff,43vw 50vh #fff,9vw 30vh #fff,39vw 94vh #fff,75vw 82vh #fff,25vw 2vh #fff,53vw 85vh #fff,36vw 99vh #fff,76vw 72vh #fff,95vw 43vh #fff,9vw 16vh #fff,11vw 49vh #fff,50vw 12vh #fff,7vw 45vh #fff,86vw 11vh #fff,58vw 38vh #fff,14vw 30vh #fff,7vw 26vh #fff,85vw 49vh #fff,7vw 70vh #fff,2vw 99vh #fff,83vw 18vh #fff,98vw 69vh #fff,59vw 35vh #fff,78vw 73vh #fff,62vw 81vh #fff,93vw 86vh #fff,19vw 13vh #fff,91vw 13vh #fff,72vw 68vh #fff,72vw 92vh #fff,31vw 39vh #fff,11vw 48vh #fff,17vw 9vh #fff,13vw 25vh #fff,2vw 94vh #fff,50vw 91vh #fff,73vw 60vh #fff,30vw 19vh #fff,17vw 11vh #fff,13vw 74vh #fff,70vw 12vh #fff,6vw 45vh #fff,60vw 18vh #fff,97vw 90vh #fff,91vw 17vh #fff,38vw 92vh #fff,36vw 24vh #fff,22vw 59vh #fff,27vw 64vh #fff,77vw 86vh #fff,47vw 7vh #fff,62vw 85vh #fff,34vw 10vh #fff,81vw 8vh #fff,43vw 22vh #fff,23vw 99vh #fff,24vw 91vh #fff,71vw 93vh #fff,94vw 68vh #fff,16vw 81vh #fff,37vw 56vh #fff,1vw 75vh #fff,42vw 17vh #fff,57vw 8vh #fff,34vw 43vh #fff,35vw 55vh #fff,95vw 64vh #fff,49vw 18vh #fff,13vw 3vh #fff,58vw 62vh #fff,36vw 26vh #fff,80vw 62vh #fff,34vw 37vh #fff,70vw 65vh #fff,82vw 7vh #fff,95vw 26vh #fff,38vw 90vh #fff,73vw 47vh #fff,78vw 11vh #fff,5vw 43vh #fff,32vw 84vh #fff,96vw 85vh #fff,76vw 92vh #fff,76vw 79vh #fff,89vw 59vh #fff,89vw 88vh #fff,24vw 74vh #fff,99vw 13vh #fff,17vw 5vh #fff,17vw 80vh #fff,94vw 77vh #fff,56vw 97vh #fff,71vw 57vh #fff,22vw 28vh #fff,84vw 47vh #fff,79vw 40vh #fff,18vw 80vh #fff,88vw 28vh #fff,55vw 29vh #fff,60vw 92vh #fff,45vw 32vh #fff,9vw 35vh #fff,77vw 61vh #fff,91vw 90vh #fff,58vw 1vh #fff,26vw 51vh #fff,99vw 99vh #fff,38vw 64vh #fff;
+  animation: moveUp 125s linear infinite;
+}
+.layer3::after {
+  content: "";
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  left: 0;
+  top: 100vh;
+  border-radius: inherit;
+  box-shadow: inherit;
+}
+
+.layer4 {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 19vw 72vh #fff,3vw 37vh #fff,33vw 30vh #fff,73vw 58vh #fff,99vw 57vh #fff,77vw 14vh #fff,39vw 57vh #fff,84vw 86vh #fff,37vw 22vh #fff,87vw 33vh #fff,99vw 55vh #fff,45vw 80vh #fff,66vw 69vh #fff,80vw 7vh #fff,13vw 88vh #fff,26vw 30vh #fff,13vw 55vh #fff,78vw 39vh #fff,84vw 63vh #fff,1vw 36vh #fff,95vw 51vh #fff,1vw 74vh #fff,16vw 6vh #fff,68vw 69vh #fff,34vw 81vh #fff,54vw 80vh #fff,56vw 4vh #fff,37vw 92vh #fff,78vw 13vh #fff,24vw 86vh #fff,19vw 1vh #fff,73vw 44vh #fff,39vw 10vh #fff,77vw 100vh #fff,74vw 98vh #fff,67vw 10vh #fff,97vw 57vh #fff,15vw 77vh #fff,5vw 2vh #fff,23vw 23vh #fff,11vw 93vh #fff,9vw 85vh #fff,35vw 7vh #fff,75vw 81vh #fff,52vw 92vh #fff,75vw 80vh #fff,78vw 62vh #fff,16vw 11vh #fff,43vw 87vh #fff,34vw 92vh #fff,73vw 2vh #fff,31vw 54vh #fff,19vw 14vh #fff,75vw 54vh #fff,60vw 31vh #fff,42vw 79vh #fff,55vw 16vh #fff,89vw 13vh #fff,40vw 64vh #fff,39vw 18vh #fff,96vw 77vh #fff,49vw 65vh #fff;
+  animation: moveUp 62s linear infinite;
+}
+.layer4::after {
+  content: "";
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  left: 0;
+  top: 100vh;
+  border-radius: inherit;
+  box-shadow: inherit;
+}
+
+.layer5 {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 21vw 37vh #fff,32vw 32vh #fff,26vw 32vh #fff,79vw 57vh #fff,54vw 66vh #fff,48vw 88vh #fff,31vw 18vh #fff,39vw 82vh #fff,89vw 80vh #fff,3vw 31vh #fff,76vw 24vh #fff,17vw 60vh #fff,23vw 22vh #fff,77vw 16vh #fff,8vw 70vh #fff,16vw 28vh #fff,66vw 69vh #fff,11vw 85vh #fff,63vw 37vh #fff,9vw 12vh #fff,28vw 23vh #fff,74vw 98vh #fff,12vw 32vh #fff,42vw 85vh #fff,65vw 23vh #fff,100vw 33vh #fff,14vw 41vh #fff,22vw 49vh #fff,79vw 98vh #fff,55vw 72vh #fff,30vw 30vh #fff;
+  animation: moveUp 31s linear infinite;
+}
+.layer5::after {
+  content: "";
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  left: 0;
+  top: 100vh;
+  border-radius: inherit;
+  box-shadow: inherit;
+}
+
+@keyframes moveUp {
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+/*# sourceMappingURL=starSky.css.map */

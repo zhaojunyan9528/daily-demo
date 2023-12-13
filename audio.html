@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>audio</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      background-color: black;
+      text-align: center;
+
+    }
+    canvas {
+      border-bottom: 1px solid #fff;
+    }
+  </style>
+</head>
+<body>
+  <canvas> </canvas>
+  <audio src="./music.mp3" controls></audio>
+  <script>
+    const audioEle = document.querySelector('audio')
+    const cvs = document.querySelector('canvas')
+    const ctx = cvs.getContext('2d')
+
+    function initCvs() {
+      cvs.width = window.innerWidth * devicePixelRatio
+      cvs.height = window.innerHeight / 4 * devicePixelRatio
+    }
+    initCvs()
+    let isInit = false
+    let dataArray, analyer
+    audioEle.onplay = function () {
+      if(isInit) {
+        return
+      }
+      // 初始化
+      const audioContext = new AudioContext() // 音频上下文
+      const source = audioContext.createMediaElementSource(audioEle) // 音频源节点
+      analyer = audioContext.createAnalyser()
+      source.connect(analyer)
+      analyer.fftSize = 512
+      dataArray = new Uint8Array(analyer.frequencyBinCount)
+      
+      analyer.connect(audioContext.destination)
+      // 音频源-》分析器-》输出设备
+      isInit = true
+    }
+    // 把分析出的波形绘制到canvas
+    function draw() {
+      requestAnimationFrame(draw)
+      const { width, height} = cvs
+      ctx.clearRect(0, 0, width, height)
+      if (!isInit) {
+        return
+      }
+      analyer.getByteFrequencyData(dataArray)
+      const len = dataArray.length
+      const barWidth = width / len
+      ctx.fillStyle = '#785cf7'
+      for (let i = 0; i < len; i++) {
+        const data = dataArray[i]
+        const barHeight = data / 255 * height
+        const x = i * barWidth
+        const y = height - barHeight
+        ctx.fillRect(x, y, barWidth, barHeight)
+      }
+      console.log(dataArray)
+    }
+    draw()
+  </script>
+</body>
+</html>

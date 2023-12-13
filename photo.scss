@@ -1,0 +1,65 @@
+@use "sass:math";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  perspective: 2000px;
+  background-color: #000;
+}
+
+.ring {
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.ring > img {
+  $imgWidth: 300px;
+  $imgHeight: 400px;
+  
+  position: absolute;
+  width: $imgWidth;
+  height: $imgHeight;
+  left: 50%;
+  top: 50%;
+  margin-left: calc(-1 * $imgWidth / 2);
+  margin-top: calc(-1 * $imgHeight / 2);
+  backface-visibility: hidden; // 背面不可见
+  opacity: 0.5;
+  transition: 0.2s;
+  &:hover {
+    opacity: 1; // 半透明-》鼠标移入无透明
+  }
+  $n: 10;
+  $r: 500px;
+  $pDeg: calc(360deg / $n);
+  @for $i from 1 through $n {
+    $d: calc($i * $pDeg); // 角度
+    $x: calc($r * math.sin($d)); // 
+    $z: calc($r * math.cos($d));
+    &:nth-child(#{$i}) {
+      transform: translate3d(#{$x}, 0, #{$z}) rotateY(calc(180deg + #{$d}));
+    }
+  }
+}
+
+$n: 10;
+$duration: 1.5s;
+$total: calc($n * $duration);
+.ring {
+  animation: rotateRing $total linear 0s infinite;
+}
+
+@keyframes rotateRing {
+  @for $i from 1 through $n {
+    $percent: calc($i * $duration / $total * 100%);
+    $deg: calc(360deg / $n);
+    #{$percent} {
+      transform: rotateY(calc($deg * $i));
+    }
+  }  
+}

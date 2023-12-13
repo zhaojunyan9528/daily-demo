@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>四角边框的跟随移动</title>
+    <link rel="stylesheet" href="follow.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <img
+          class=""
+          src="https://img2.baidu.com/it/u=2819083171,3219798166&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1701363600&t=4f8106000e50673a4eb625358b21fda2"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://img0.baidu.com/it/u=3957662198,2211672528&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1701363600&t=d059b652f10e6228c0264a59caa43fb3"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://img1.baidu.com/it/u=2606126155,1542893173&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1701363600&t=ee277340b65aa90da3b1970839ace904"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://img0.baidu.com/it/u=2957774961,3498509481&fm=253&fmt=auto&app=138&f=JPEG?w=499&h=339"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://img2.baidu.com/it/u=2819083171,3219798166&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1701363600&t=4f8106000e50673a4eb625358b21fda2"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://img1.baidu.com/it/u=3006142821,3800221639&fm=253&fmt=auto&app=138&f=JPG?w=500&h=306"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://img2.baidu.com/it/u=2819083171,3219798166&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1701363600&t=4f8106000e50673a4eb625358b21fda2"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://img0.baidu.com/it/u=3957662198,2211672528&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1701363600&t=d059b652f10e6228c0264a59caa43fb3"
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://img1.baidu.com/it/u=2606126155,1542893173&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1701363600&t=ee277340b65aa90da3b1970839ace904"
+        />
+      </div>
+      <div class="pointer"></div>
+    </div>
+    <script>
+      const imgs = document.querySelectorAll('.container img')
+      const pointer = document.querySelector('.pointer')
+      for (const img of imgs) {
+        img.onmouseenter = e => {
+          const width = img.offsetWidth;
+          const height = img.offsetHeight;
+
+          const x = img.offsetLeft; // 相对于祖先元素定位的元素的位置，即container
+          const y = img.offsetTop;
+
+          pointer.style.setProperty('--x', x + 'px')
+          pointer.style.setProperty('--y', y + 'px')
+          pointer.style.setProperty('--sW', width + 'px')
+          pointer.style.setProperty('--sH', height + 'px')
+
+        }
+      }
+    </script>
+  </body>
+</html>

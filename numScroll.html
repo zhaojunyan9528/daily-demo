@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数字滚动动画-封装动画函数</title>
+</head>
+<body>
+  <button class="btn">打折</button>
+  <label for="">价格：4599.00</label>
+  <script>
+    
+    const btn = document.querySelector('.btn')
+    const label = document.querySelector('label')
+    btn.onclick = function (e) {
+      animation(1000, 4599, 49, (value) => {
+        label.textContent = `价格：${value.toFixed(2)}`
+      })
+    }
+    // 动画本质：一段时间内从一个数字到另一个数字
+    // 数字类属性可以使用动画
+    function animation (duration, from, to, progress) {
+      const speed = (to - from) / duration
+      const startTime = Date.now()
+      let value = from
+      function _run() {
+        // 让value发送变化
+        // value = from + 速度 * 时间
+        const now = Date.now()
+        const time = (now - startTime)
+        if (time >= duration) {
+          value = to
+          progress && progress(value)
+          return
+        }
+        value = from + speed * time
+        progress && progress(value)
+
+        // 注册下一次变化
+        requestAnimationFrame(_run)
+      }
+      _run()
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>点击小球移动动画</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    .ball {
+      width: 80px;
+      height: 80px;
+      background-color: orange;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .pointer {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      opacity: 0;
+      border: 1px solid #efefef;
+      animation: wave 1s linear;
+    }
+    @keyframes wave {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+  <script>
+    const ball = document.querySelector('.ball')
+    window.addEventListener('click', (e) => {
+      // console.log(e)
+      const pointer = document.createElement('div')
+      pointer.classList.add('pointer')
+      const { clientX:x, clientY: y } = e
+      pointer.style.left = `${x}px`
+      pointer.style.top = `${y}px`
+      document.body.appendChild(pointer)
+
+      move(x, y)
+      // ball.style.transition = '0.5s'
+      // ball.style.transform = `translate(${x}px, ${y}px)`
+
+      pointer.addEventListener('animationend', () => {
+        console.log('animationed')
+        pointer.remove()
+      })
+    })
+    function move(x, y) {
+      let rect = ball.getBoundingClientRect()
+      const ballX = rect.left + rect.width / 2
+      const ballY = rect.top + rect.height / 2
+
+      // 取消之前完成的动画
+      const ans = ball.getAnimations()
+      for (const i of ans) {
+        i.cancel()
+      }
+      const rad = Math.atan2(y - ballY, x - ballX)
+      const deg = (rad * 180) / Math.PI
+      console.log(deg)
+      ball.animate(
+        [
+          {
+            transform: `translate(${ballX}px, ${ballY}px) rotate(${deg}deg)`
+          },
+          {
+            transform: `translate(${ballX}px, ${ballY}px) rotate(${deg}deg) scaleX(1.5) `,
+            offset: 0.3
+          },
+          {
+            transform: `translate(${x}px, ${y}px) rotate(${deg}deg) scaleX(1.5)`,
+            offset: 0.8
+          },
+          {
+            transform: `translate(${x}px, ${y}px) rotate(${deg}deg)`
+          }
+        ],
+        {
+          duration: 600,
+          fill: 'forwards'
+        }
+      )
+    }
+    // web animation api:许同步和定时更改网页的呈现，即 DOM 元素的动画
+  </script>
+</body>
+</html>

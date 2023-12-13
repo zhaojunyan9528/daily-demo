@@ -1,0 +1,74 @@
+@use "sass:math";
+
+$size: 200px;
+/* 多少张图片 */
+$n: 6 ;
+/* 每个角度 */
+$pDeg: calc(360deg / $n); 
+// 小圆半径
+$r: calc($size / 2);
+/* 大圆半径 */
+$R: calc($r / math.sin(calc($pDeg / 2)));
+// 大圆尺寸
+$innerSize: $R * 2;
+
+
+body {
+  background-color: #000;
+}
+
+.container {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  outline: 5px solid #fff;
+  margin: 50px auto 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.inner {
+  width: $innerSize;
+  height: $innerSize;
+  background-color: transparent;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: $r;
+  position: relative;
+  z-index: -1;
+  
+  img {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -$r;
+    margin-top: -$r;
+    transform-origin: center calc($r + $R);
+    @for $i from 1 through $n {
+      &:nth-child(#{$i}) {
+        transform: rotate($pDeg * ($i - 1));
+      }
+    }
+  }
+}
+// 动画每个阶段占据百分比
+$u: calc(1 / $n * 100%); 
+$rotateDuration: 0.3s; // 每张图片旋转的时间
+$stopDuration: 1s; // 每张图片停留的时间
+$duration: calc(($rotateDuration + $stopDuration) * $n); // 总的动画时间
+$backPercent: calc($stopDuration / ($rotateDuration + $stopDuration) * $u); // 停留时间占据一张图片动画时间
+@keyframes rotate {
+  @for $i from 1 through $n {
+    $p: calc($u * $i); 
+    $back: calc($p - $backPercent);
+    #{$back}, #{$p}{
+      transform: rotate(-$pDeg * $i);
+    }
+  }
+}
+
+.inner {
+  animation: rotate $duration ease-in infinite;
+}

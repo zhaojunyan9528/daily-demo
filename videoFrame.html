@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提取视频文件中的画面帧</title>
+</head>
+<body>
+  
+  <input type="file" name="video" id="">
+  <script>
+    let file = document.querySelector('input[type=file]')
+    file.onchange = async (e) => {
+      console.log(e.target.files)
+      let file = e.target.files[0]
+      // 提取第10秒的帧并img预览
+      // const frame = await captureFrame(file, 10)
+      // createPreview(frame)
+      // console.log(frame)
+      // 每隔1秒提取帧展示
+      for (let i = 1; i < 10; i++) {
+        const frame = await captureFrame(file, 1 * i)
+        createPreview(frame)
+      }
+    }
+    function drawVideo(vdo) {
+      return new Promise((resolve, reject) => {
+        const cvs = document.createElement('canvas')
+        const ctx = cvs.getContext('2d')
+        cvs.width = vdo.videoWidth
+        cvs.height = vdo.videoHeight
+        ctx.drawImage(vdo, 0, 0, cvs.width, cvs.height)
+        cvs.toBlob((blob) => {
+          resolve({
+            blob,
+            url: URL.createObjectURL(blob)
+          })
+        })
+      })
+      
+    }
+    function captureFrame(vdoFile, time = 0) {
+      return new Promise((resolve, reject) => {
+        const vdo = document.createElement('video')
+        vdo.currentTime = time
+        vdo.muted = true
+        vdo.autoplay = true
+        vdo.oncanplay = async () => {
+          const frame = await drawVideo(vdo)
+          resolve(frame)
+        }
+        vdo.src = URL.createObjectURL(vdoFile)
+      })
+    }
+    function createPreview(frame) {
+      const img = document.createElement('img')
+      img.src = frame.url
+      document.body.append(img)
+    }
+
+    function removeTag(fragment) {
+        return (new DOMParser().parseFromString(fragment, 'text/html').body.textContent || '')
+    }
+    let parser = removeTag(`<div class="container">
+        <h1>DOM Parser</h1>
+        <ul>
+          <li>Lorem.</li>
+          <li>Maiores.</li>
+          <li>Sapiente!</li>
+          <li>Doloremque.</li>
+        </ul>
+      </div>`)
+    console.log(parser)
+  </script>
+</body>
+</html>
