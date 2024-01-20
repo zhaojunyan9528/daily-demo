@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>金额转中文/大写中文</title>
+  </head>
+  <body>
+    <script>
+      function toChineseNumber(num) {
+        const parts = num
+          .toString()
+          .replace(/(?=(\d{4})+$)/g, ",")
+          .split(",")
+          .filter(Boolean)
+        const map = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"]
+        const units = ["", "十", "百", "千"]
+        function _handleZero(part) {
+          return part.replace(/零+/g, "零").replace(/零$/g, "")
+        }
+        function _transform(part) {
+          let result = ""
+          for (let index = 0; index < part.length; index++) {
+            const n = map[part[index]]
+            let u = units[part.length - index - 1]
+            if (n === "零") u = ""
+            result += n + u
+          }
+          return _handleZero(result)
+        }
+        const bigUnits = ["", "万", "亿"]
+        // 处理亿和万
+        let result = ""
+        for (let index = 0; index < parts.length; index++) {
+          const p = parts[index]
+          const c = _transform(p)
+          const u = bigUnits[parts.length - index - 1]
+          if (c === "") {
+            result += c + "零"
+            continue
+          }
+          result += c + u
+        }
+        result = _handleZero(result)
+        console.log(result)
+        return result
+      }
+      function toBigChineseNumber(num) {
+        const map = {
+          一: "壹",
+          二: "贰",
+          三: "叁",
+          四: "肆",
+          五: "伍",
+          六: "陆",
+          七: "柒",
+          八: "捌",
+          九: "玖",
+          零: "零",
+          十: "拾",
+          百: "佰",
+          千: "仟",
+          万: "万",
+          亿: "亿"
+        }
+        const nums = toChineseNumber(num).split("")
+        const result = nums.map(n => map[n]).join("")
+        console.log("big:", result)
+        return result
+      }
+      toChineseNumber(12000000001) //一百二十亿零一
+      toBigChineseNumber(123456789)
+    </script>
+  </body>
+</html>
